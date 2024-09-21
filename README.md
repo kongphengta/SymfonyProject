@@ -19,7 +19,15 @@ Puis installer webapp avec Composer.
 ```
 composer require webapp
 ```
-Paramétrer de fichier .env pour traiviller en local.
+Paramétrer de fichier .env pour travailler en local, il faut d'abord copier ce fichier .env en .env.local et configurer ce dernier, il faut savoir aussi l'utilisateur de ce serveur et la version du serveur.
 ```
 cp .env .env.local
 ```
+Après avoir paramétré le fichier .env.local je vais massurer que mon projet n'a pas de problème côté serveur MySQL (MariaDB) je vais créer une base de données, je lance la commande.
+
+```php
+php bin/console doctrine:database:create
+```
+Avec cette commande doctrine va créer la base de données avec le nom de la base de données que j'ai attribué dans fichier .env.local.
+
+
